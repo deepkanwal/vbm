@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="3400" systemVersion="13A603" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="AddedGame" representedClassName="AddedGame" syncable="YES">
+        <attribute name="coverImageMediumURLString" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="coverImageThumbnailURLString" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="detailsURLString" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="developers" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="gameDescription" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="gameId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="gameName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="genres" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="isBeaten" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="isFavourite" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="isMissingData" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="largeImages" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="notes" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="nowPlaying" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="pageURLString" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="platforms" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="progress" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="publishers" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="rating" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="releaseYear" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="thumbnailImages" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="yearBought" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="platform" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="AddedPlatform" inverseName="games" inverseEntity="AddedPlatform" syncable="YES"/>
+    </entity>
+    <entity name="AddedPlatform" representedClassName="AddedPlatform" syncable="YES">
+        <attribute name="count" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="games" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="AddedGame" inverseName="platform" inverseEntity="AddedGame" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="AddedGame" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="AddedPlatform" positionX="0" positionY="0" width="0" height="0"/>
+    </elements>
+</model>
