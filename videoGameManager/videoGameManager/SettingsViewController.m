@@ -17,6 +17,7 @@
 
 #define kSECTION_OVERALL_STATS @"Overall Stats"
 #define kSECTION_SHARE @"Share Games List"
+#define kSECTION_GITHUB @"View on GitHub"
 #define kSECTION_FEEDBACK @"Send Feedback"
 #define kSECTION_FAQ @"FAQ"
 #define kSECTION_ABOUT @"About"
@@ -34,6 +35,7 @@
 #define kBACKUP_FILE_PATH [NSString stringWithFormat:@"/%@", kBACKUP_FILE_NAME]
 #define kRESTORE_FILE_NAME @"VBM_RESTORE"
 
+#define kGITHUB_URL @"https://github.com/ahalp/vbm"
 
 @interface SettingsViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -96,7 +98,7 @@
 
 - (void)setupProperties
 {
-    self.sectionTitles = @[@[kSECTION_OVERALL_STATS], @[kSECTION_BACKUP, kSECTION_RESTORE, kSECTION_DROPBOX], @[kSECTION_SHARE], @[kSECTION_FEEDBACK, kSECTION_FAQ, kSECTION_ABOUT]];
+    self.sectionTitles = @[@[kSECTION_OVERALL_STATS], @[kSECTION_BACKUP, kSECTION_RESTORE, kSECTION_DROPBOX], @[kSECTION_SHARE], @[kSECTION_GITHUB, kSECTION_FEEDBACK, kSECTION_FAQ, kSECTION_ABOUT]];
     [self.tableView setupDefaultApperance];
 }
 
@@ -178,6 +180,8 @@
         
     } else if ([[[self.sectionTitles objectAtIndex:indexPath.section] objectAtIndex:indexPath.row] isEqualToString:kSECTION_DROPBOX]) {
         [self performSegueWithIdentifier:kSEGUE_SETTINGS_TO_BACKUP sender:nil];
+    } else if ([[[self.sectionTitles objectAtIndex:indexPath.section] objectAtIndex:indexPath.row] isEqualToString:kSECTION_GITHUB]) {
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:kGITHUB_URL]];
     }
     
     [self.tableView deselectRowAtIndexPath:indexPath animated:YES];

@@ -63,6 +63,7 @@
 }
 
 - (IBAction)linkDropboxButton:(id)sender {
+    [[DBSession sharedSession] unlinkAll];
     [[DBSession sharedSession] linkFromController:self];
 }
 
