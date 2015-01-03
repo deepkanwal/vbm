@@ -28,3 +28,9 @@ The app uses the [Dropbox Core SDK](https://www.dropbox.com/developers/core/sdks
 ## Screenshots
 
 ![Screenshots](http://i.imgur.com/ETcqeGP.png)
+
+## Privacy Policy
+
+VBM uses [Google Analytics](http://www.google.ca/analytics/) to collect traffic data. This includes data such as user interactions within the app, devices used and location (granularity is limited to city). The data is not personally identifiable. VBM uses  Google Analytics purely to determine the usage of the different areas of the app. This will allow me to determine which areas of the app I should target for future updates. [Crashlytics](https://crashlytics.com/) is also used to to send back logs in the event of a crash. This includes information about the device the crash occured on (ie. iOS version, orientation, system usage). This information is used to allow me to respond to crashes as they happen. 
+
+Last updated: Oct 6, 2013
